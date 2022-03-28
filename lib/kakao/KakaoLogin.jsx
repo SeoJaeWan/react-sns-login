@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 
 const KakaoLogin = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      console.log(window.Kakao, window);
-    });
-  }, []);
-
   return (
     <div
       onClick={() => {

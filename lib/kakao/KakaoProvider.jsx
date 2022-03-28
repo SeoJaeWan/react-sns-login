@@ -15,7 +15,8 @@ const KakaoProvider = ({ children, token }) => {
 
   useEffect(async () => {
     await setting();
-    window.Kakao.init(token);
+    console.log(token);
+    window.Kakao.init(token.toString());
   }, []);
 
   return React.cloneElement(children);
