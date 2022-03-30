@@ -15,7 +15,6 @@ const KakaoProvider = ({ children, token }) => {
 
   useEffect(async () => {
     await setting();
-    console.log(token);
     window.Kakao.init(token.toString());
   }, []);
 
