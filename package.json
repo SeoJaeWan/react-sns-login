@@ -8,6 +8,10 @@
     "build": "webpack --mode production",
     "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeoJaeWan/react-sns-login.git"
+  },
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "axios": "^0.26.1",
@@ -16,6 +20,7 @@
     "html-webpack-plugin": "^5.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2",
     "react-sns-login": "^0.1.6",
     "styled-components": "^5.3.3"
   },
@@ -35,5 +40,14 @@
     "webpack-dev-server": "^4.7.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "kakao",
+    "naver",
+    "google",
+    "kakao-login",
+    "naver-login",
+    "google-login"
+  ]
 }

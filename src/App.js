@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
+  GoogleLogin,
+  GoogleLogout,
   KakaoLogin,
   KakaoLogout,
   KakaoUnlink,
@@ -9,7 +11,7 @@ import {
 } from "./lib";
 
 const App = ({}) => {
-  useEffect(() => {}, []);
+  console.log(window);
 
   return (
     <div>
@@ -30,6 +32,10 @@ const App = ({}) => {
       >
         logout
       </div>
+
+      <GoogleLogin />
+
+      <div onClick={() => GoogleLogout()}>Google Logout</div>
     </div>
   );
 };

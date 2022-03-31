@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 const NaverLogin = ({ render = false }) => {
-  console.log(window);
-
   return (
     <div id="naverIdLogin">
       <a id="naverIdLogin_loginButton" className="sns-naver-container">
