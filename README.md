@@ -3,7 +3,7 @@
   <p>It is a login library customized for Google, Kakao, and Naver for React.</p>
   <p>Google, Kakao, Naver를 React에 맞게 커스텀한 라이브러리 입니다.</p>
   <p>
-    <a href="https://github.com/SeoJaeWan/react-sns-login/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/JaeSeoKim/react-kakao-maps-sdk"></a>
+    <a href="https://github.com/SeoJaeWan/react-sns-login/issues">GitHub issues</a>
   </p>
 </div>
 

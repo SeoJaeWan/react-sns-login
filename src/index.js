@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { GoogleProvider, KakaoProvider, NaverProvider } from "./lib";
+import { GoogleProvider, KakaoProvider, NaverProvider } from "react-sns-login";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./demo/Router";
 import App from "./App";
 
 ReactDOM.render(
@@ -10,7 +12,9 @@ ReactDOM.render(
       callbackUrl={"http://localhost:8080/"}
     >
       <KakaoProvider token={process.env.KAKAO_KEY}>
-        <App />
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
       </KakaoProvider>
     </NaverProvider>
   </GoogleProvider>,
