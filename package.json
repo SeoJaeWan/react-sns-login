@@ -51,5 +51,6 @@
     "kakao-login",
     "naver-login",
     "google-login"
-  ]
+  ],
+  "homepage": "https://seojaewan.github.io/react-sns-login/"
 }

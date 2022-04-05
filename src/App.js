@@ -8,11 +8,9 @@ import {
   KakaoUnlink,
   NaverLogin,
   NaverLogout,
-} from "./lib";
+} from "react-sns-login";
 
 const App = ({}) => {
-  console.log(window);
-
   return (
     <div>
       <KakaoLogin />
@@ -33,7 +31,7 @@ const App = ({}) => {
         logout
       </div>
 
-      <GoogleLogin />
+      <GoogleLogin render={() => <div>asdasdasd</div>} />
 
       <div onClick={() => GoogleLogout()}>Google Logout</div>
     </div>
