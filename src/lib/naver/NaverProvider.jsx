@@ -21,7 +21,7 @@ const NaverProvider = ({ children, clientId, callbackUrl }) => {
       const js = document.createElement("script");
 
       js.id = "jquery-sdk";
-      js.src = "http://code.jquery.com/jquery-1.11.3.min.js";
+      js.src = "https://code.jquery.com/jquery-1.12.4.min.js";
       js.onload = resolve;
 
       document.head.append(js);

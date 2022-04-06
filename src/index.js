@@ -12,7 +12,7 @@ ReactDOM.render(
       callbackUrl={"http://localhost:8080/"}
     >
       <KakaoProvider token={process.env.KAKAO_KEY}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Router />
         </BrowserRouter>
       </KakaoProvider>
