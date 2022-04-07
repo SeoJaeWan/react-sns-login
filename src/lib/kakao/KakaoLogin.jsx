@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 const KakaoLogin = ({
+  token,
   success = (authObj) => {
     console.log(JSON.stringify(authObj));
   },
@@ -9,6 +10,23 @@ const KakaoLogin = ({
   },
   render = false,
 }) => {
+  const setting = () => {
+    return new Promise((resolve, reject) => {
+      const js = document.createElement("script");
+
+      js.id = "kakao-sdk";
+      js.src = "//developers.kakao.com/sdk/js/kakao.min.js";
+      js.onload = resolve;
+
+      document.head.append(js);
+    });
+  };
+
+  useEffect(async () => {
+    await setting();
+    window.Kakao.init(token.toString());
+  }, []);
+
   return (
     <div
       className="sns-kakao-container"

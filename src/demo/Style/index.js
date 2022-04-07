@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding: 20px 32px;
+  padding: 20px 180px 20px 32px;
 
   position: relative;
 
@@ -9,6 +9,10 @@ export const Container = styled.section`
 
   a {
     color: black;
+  }
+
+  .ant-anchor-ink::before {
+    background-color: black;
   }
 `;
 

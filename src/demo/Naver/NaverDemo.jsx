@@ -1,57 +1,239 @@
-import { Typography } from "antd";
-import React from "react";
-import { Container, H1, H2, MainSection } from "../Style";
-import { Link } from "react-router-dom";
+import { Anchor, Typography } from "antd";
+import React, { useEffect } from "react";
+import { Container, H1, H2, H3, MainSection } from "../Style";
+import {
+  NaverLogin,
+  NaverLogout,
+  NaverCallback,
+  getNaverInfo,
+} from "react-sns-login";
+import { useLocation } from "react-router-dom";
+import queryString from "query-string";
 
-export default function NaverDemo() {
-  const { Paragraph, Text } = Typography;
+const { Paragraph } = Typography;
+const { Link } = Anchor;
+
+export default function NaverDemo({}) {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+
+  useEffect(() => {
+    const userData = getNaverInfo();
+
+    if (userData) {
+      console.log(userData);
+    }
+
+    if (query.naver) {
+      NaverCallback();
+    }
+  }, [location]);
 
   return (
     <Container>
       <MainSection>
-        <H1>Google Login</H1>
+        <H1 id="Info">Naver Login</H1>
+        <p>Naver Login 기능을 사용할 수 있습니다.</p>
+        <p>네이버 개발자 센터를 이용해서 얻은 클라이언트 ID가 필요합니다.</p>
 
-        <p>
-          React Sns Login은 카카오, 네이버, 구글의 로그인 및 로그아웃 기능을
-          리액트에서 사용할 수 있도록 만들었습니다.
+        <H2 id="Login">Login</H2>
+        <H3 id="Basic Login">Basic Login</H3>
+        <p>Login 기능을 구현하기위해서 NaverLogin을 사용해줍니다.</p>
+        <Paragraph>
+          <pre>
+            {`import React from "react";
+import {
+  NaverLogin,
+  NaverCallback
+} from "react-sns-login";
+import queryString from "query-string";
+import { useLocation } from "react-router-dom";
+
+const App = ({}) => {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+
+  useEffect(() => {
+    const userData = getNaverInfo();
+
+    if (userData) {
+      console.log(userData);
+    }
+
+    if (query.naver) {
+      NaverCallback();
+    }
+  }, [location]);
+
+  return (
+    <NaverLogin
+      token={"YOUR NAVER KEY"}
+      callbackUrl={"YOUR CALLBACK URL"}
+     />
+  );
+};
+
+export default App;
+`}
+          </pre>
+        </Paragraph>
+        <p style={{ cursor: "pointer" }} onClick={() => setLoginActive("1")}>
+          ex)
         </p>
 
-        <p>추후 페이스북 등의 SNS 로그인 기능도 추가할 예정입니다.</p>
+        <NaverLogin
+          token={process.env.NAVER_KEY}
+          callbackUrl={"http://localhost:8080/Naver"}
+        />
 
-        <H2>Install</H2>
+        <br />
+
+        <H3 id="Custom Login">Custom Login</H3>
+
+        <p>만약 로그인 버튼을 직접 만들 경우 render 함수에 넣어줍니다.</p>
 
         <Paragraph>
           <pre>
-            {`npm install react-kakao-maps-sdk 
-# or 
-yarn add react-kakao-maps-sdk`}
+            {`import React from "react";
+import {
+  NaverLogin,
+  NaverCallback
+} from "react-sns-login";
+import queryString from "query-string";
+import { useLocation } from "react-router-dom";
+
+const App = ({}) => {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+
+  useEffect(() => {
+    const userData = getNaverInfo();
+
+    if (userData) {
+      console.log(userData);
+    }
+
+    if (query.naver) {
+      NaverCallback();
+    }
+  }, [location]);
+
+  return (
+    <NaverLogin
+      token={"YOUR NAVER KEY"}
+      callbackUrl={"YOUR CALLBACK URL"}
+      render={() => <button>네이버 로그인</button>}
+     />
+  );
+};
+
+export default App;
+`}
           </pre>
         </Paragraph>
 
-        <H2>Documentation</H2>
+        <p style={{ cursor: "pointer" }}>ex)</p>
 
-        <ul style={{ fontSize: `1.5rem` }}>
-          <li>
-            <Link to="/Google">Google</Link>
-          </li>
-          <li>
-            <Link to="/Kakao">Kakao</Link>
-          </li>
-          <li>
-            <Link to="Naver">Naver</Link>
-          </li>
-        </ul>
+        <NaverLogin
+          token={process.env.NAVER_KEY}
+          callbackUrl={"http://localhost:8080/Naver"}
+          render={() => <button>네이버 로그인</button>}
+        />
 
-        {/* <div style={{ position: "absolute", top: "18px", right: "45px" }}>
-      <Anchor affix={true} style={{ float: "right" }}>
-        <Link href="#components-anchor-demo-basic" title="Basic demo" />
-        <Link href="#components-anchor-demo-static" title="Static demo" />
-        <Link href="#API" title="API">
-          <Link href="#Anchor-Props" title="Anchor Props" />
-          <Link href="#Link-Props" title="Link Props" />
-        </Link>
-      </Anchor>
-    </div> */}
+        <br />
+
+        <H3 id="Login Callback">Login Callback</H3>
+
+        <p>
+          로그인 완료 userData를 useEffect에서 조회할 수 있어 특정한 작업을
+          수행할 수 있다.
+        </p>
+
+        <Paragraph>
+          <pre>
+            {`import React from "react";
+import {
+  NaverLogin,
+  NaverCallback
+} from "react-sns-login";
+import queryString from "query-string";
+import { useLocation } from "react-router-dom";
+
+const App = ({}) => {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+
+  useEffect(() => {
+    const userData = getNaverInfo();
+
+    if (userData) {
+      console.log(userData);
+
+      ...
+
+      anyThing   < --------
+
+      ...
+    }
+
+    if (query.naver) {
+      NaverCallback();
+    }
+  }, [location]);
+
+  return (
+    <NaverLogin
+      token={"YOUR NAVER KEY"}
+      callbackUrl={"YOUR CALLBACK URL"}
+      render={() => <button>네이버 로그인</button>}
+     />
+  );
+};
+
+export default App;
+`}
+          </pre>
+        </Paragraph>
+
+        <br />
+
+        <H2 id="Logout">Logout</H2>
+        <p>로그아웃을 진행할 경우 NaverLogout 함수를 사용해서 진행한다.</p>
+
+        <Paragraph>
+          <pre>
+            {`import React from "react";
+import {
+  NaverLogout,
+} from "react-sns-login";
+
+const App = ({}) => {
+  return (
+    <div>
+      <button onClick={() => NaverLogout()}>Logout</button>
+    </div>
+  );
+};
+
+export default App;
+`}
+          </pre>
+        </Paragraph>
+
+        <p style={{ cursor: "pointer" }}>ex)</p>
+        <button onClick={() => NaverLogout()}>Logout</button>
+
+        <div style={{ position: "absolute", top: "18px", right: "45px" }}>
+          <Anchor affix={true} style={{ float: "right" }}>
+            <Link href="#Info" title="Naver" />
+            <Link href="#Login" title="Login">
+              <Link href="#Basic Login" title="Basic Login" />
+              <Link href="#Custom Login" title="Custom Login" />
+              <Link href="#Login Callback" title="Login Callback" />
+            </Link>
+            <Link href="#Logout" title="Logout" />
+          </Anchor>
+        </div>
       </MainSection>
     </Container>
   );

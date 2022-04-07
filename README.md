@@ -20,23 +20,29 @@ yarn add react-sns-login
 ### Google Login
 
 ```jsx live
-ReactDOM.render(
-  <GoogleProvider token={"YOUR_GOOGLE_CLIENT_ID"}>
-    <App />
-  </GoogleProvider>,
-  document.getElementById("root")
-);
+return <GoogleLogin token={"YOUR GOOGLE KEY"} />;
 ```
+
+### Kakao Login
+
+```jsx live
+return <KakaoLogin token={"YOUR KAKAO KEY"} />;
+```
+
+### Naver Login
 
 ```jsx live
 return (
-  <div>
-    <GoogleLogin />
-  </div>
+  <NaverLogin token={"YOUR NAVER KEY"} callbackUrl={"YOUR CALLBACK URL"} />;
 );
 ```
 
+Naver Login requires additional work.
+Please refer to the document.
+
 ## Documentation
+
+<a href="https://seojaewan.github.io/react-sns-login/">Document</a>
 
 ## Working list
 

@@ -6,17 +6,11 @@ import Router from "./demo/Router";
 import App from "./App";
 
 ReactDOM.render(
-  <GoogleProvider token={process.env.GOOGLE_KEY}>
-    <NaverProvider
-      clientId={process.env.NAVER_KEY}
-      callbackUrl={"http://localhost:8080/"}
-    >
-      <KakaoProvider token={process.env.KAKAO_KEY}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Router />
-        </BrowserRouter>
-      </KakaoProvider>
-    </NaverProvider>
-  </GoogleProvider>,
+  <BrowserRouter
+    //
+    basename={process.env.PUBLIC_URL}
+  >
+    <Router />
+  </BrowserRouter>,
   document.getElementById("root")
 );
