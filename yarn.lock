@@ -3987,10 +3987,10 @@
     "lodash.throttle" "^4.1.1"
     "prop-types" "^15.7.2"
 
-"react-sns-login@^0.9.4", "react-sns-login@^0.9.5":
-  "integrity" "sha512-4AkI99MwBBfciSrKHyoNBISwyg4LMbzdXJztjRzXw2ewgamGcoy8de+7YBxupVpB0eC8ptc67NBBxJN1o/jlvw=="
-  "resolved" "https://registry.npmjs.org/react-sns-login/-/react-sns-login-0.9.5.tgz"
-  "version" "0.9.5"
+"react-sns-login@^0.9.5", "react-sns-login@^0.9.9":
+  "integrity" "sha512-25Nk4L0hhKMu/53rCzUNyr9iNsqaYxuLpI77gnbf0yTn7UWEgNnG4v5Zo2nq8ac6ROMEF58f9zakxbtHV0wsrQ=="
+  "resolved" "https://registry.npmjs.org/react-sns-login/-/react-sns-login-0.9.9.tgz"
+  "version" "0.9.9"
   dependencies:
     "@babel/runtime" "^7.17.8"
     "antd" "^4.19.3"
@@ -4004,7 +4004,7 @@
     "react-icons" "^4.3.1"
     "react-router-dom" "^6.3.0"
     "react-scroll" "^1.8.6"
-    "react-sns-login" "^0.9.4"
+    "react-sns-login" "^0.9.5"
     "styled-components" "^5.3.3"
 
 "react@*", "react@^15.5.4 || ^16.0.0 || ^17.0.0", "react@^17.0.2", "react@>= 16.8.0", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.8", "react@>=16.9.0", "react@17.0.2":

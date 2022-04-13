@@ -23,6 +23,12 @@ yarn add react-sns-login
 return <GoogleLogin token={"YOUR GOOGLE KEY"} />;
 ```
 
+### FaceBook Login
+
+```jsx live
+return <FacebookLogin appId={"YOUR FACEBOOK APP ID"} />;
+```
+
 ### Kakao Login
 
 ```jsx live
@@ -38,15 +44,25 @@ return (
 ```
 
 Naver Login requires additional work.
+<br/>
 Please refer to the document.
 
 ## Documentation
 
-<a href="https://seojaewan.github.io/react-sns-login/">Document</a>
+<a href="https://seojaewan.github.io/react-sns-login/">Document</a><br/>
+<a href="https://seojaewan.github.io/react-sns-login/FaceBook">Google</a><br/>
+<a href="https://seojaewan.github.io/react-sns-login/Google">FaceBook</a><br/>
+<a href="https://seojaewan.github.io/react-sns-login/Kakao">Kakao</a><br/>
+<a href="https://seojaewan.github.io/react-sns-login/Naver">Naver</a>
 
 ## Working list
 
 - Google
+
+  - Login
+  - Logout
+
+- FaceBook
 
   - Login
   - Logout

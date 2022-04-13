@@ -1,13 +1,13 @@
 {
   "name": "react-sns-login",
-  "version": "0.9.5",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files ",
-    "deploy": "gh-pages -d build",
+    "deploy": "cp build/index.html build/404.html && gh-pages -d build",
     "predeploy": "npm run build"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "react-scroll": "^1.8.6",
-    "react-sns-login": "^0.9.5",
+    "react-sns-login": "^0.9.9",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -49,12 +49,14 @@
   "license": "ISC",
   "keywords": [
     "react",
+    "facebook",
     "kakao",
     "naver",
     "google",
     "kakao-login",
     "naver-login",
-    "google-login"
+    "google-login",
+    "facebook-login"
   ],
   "homepage": "https://seojaewan.github.io/react-sns-login/"
 }

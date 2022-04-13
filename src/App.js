@@ -9,11 +9,12 @@ import {
   NaverLogin,
   NaverLogout,
 } from "react-sns-login";
+import { FacebookLogin, FacebookLogout } from "./lib";
 
 const App = ({}) => {
   return (
     <div>
-      <KakaoLogin />
+      {/* <KakaoLogin />
 
       <div onClick={() => KakaoLogout()}>logout</div>
 
@@ -33,7 +34,11 @@ const App = ({}) => {
 
       <GoogleLogin render={() => <div>asdasdasd</div>} />
 
-      <div onClick={() => GoogleLogout()}>Google Logout</div>
+      <div onClick={() => GoogleLogout()}>Google Logout</div> */}
+
+      {/* <FacebookLogin appId={"1092381454646861"} /> */}
+
+      <button onClick={FacebookLogout}>logout</button>
     </div>
   );
 };

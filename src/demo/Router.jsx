@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import HomeDemo from "./Common/HomeDemo";
 import GoogleDemo from "./Google/GoogleDemo";
+import FaceBookDemo from "./FaceBook/FaceBookDemo";
 import KakaoDemo from "./Kakao/KakaoDemo";
 import NaverDemo from "./Naver/NaverDemo";
 import { useLocation } from "react-router-dom";
@@ -71,6 +72,11 @@ export default () => {
                 <Text>Google</Text>
               </Link>
             </Menu.Item>
+            <Menu.Item key="/FaceBook">
+              <Link to="/FaceBook">
+                <Text>FaceBook</Text>
+              </Link>
+            </Menu.Item>
             <Menu.Item key="/Kakao">
               <Link to="/Kakao">
                 <Text>Kakao</Text>
@@ -81,17 +87,18 @@ export default () => {
                 <Text>Naver</Text>
               </Link>
             </Menu.Item>
-            <Menu.Item key="/Support">
+            {/* <Menu.Item key="/Support">
               <Link to="/Naver">
                 <Text>Support</Text>
               </Link>
-            </Menu.Item>
+            </Menu.Item> */}
           </Menu>
         </Sider>
         <Content>
           <Routes>
             <Route exact path="/" element={<HomeDemo />} />
             <Route exact path="/Google" element={<GoogleDemo />} />
+            <Route exact path="/FaceBook" element={<FaceBookDemo />} />
             <Route exact path="/Kakao" element={<KakaoDemo />} />
             <Route exact path="/Naver" element={<NaverDemo />} />
           </Routes>

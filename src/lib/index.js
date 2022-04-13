@@ -13,3 +13,6 @@ export { getNaverInfo } from "./naver/NaverLogin";
 export { default as GoogleProvider } from "./google/GoogleProvider";
 export { default as GoogleLogin } from "./google/GoogleLogin";
 export { GoogleLogout } from "./google/GoogleLogin";
+
+export { default as FacebookLogin } from "./facebook/FacebookLogin";
+export { FacebookLogout } from "./facebook/FacebookLogin";
